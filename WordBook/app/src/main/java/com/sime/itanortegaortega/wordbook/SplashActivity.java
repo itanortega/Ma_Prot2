@@ -1,11 +1,15 @@
 package com.sime.itanortegaortega.wordbook;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +38,27 @@ public class SplashActivity extends AppCompatActivity {
         LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
-        existeArchivoVersion.execute();
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Obtener el estado de la conexion a internet en el dispositivo
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        // Validar el estado obtenido de la conexion
+        if (networkInfo != null){
+            existeArchivoVersion.execute();
+        }else {
+            Toast.makeText(this, "Es necesario conectarse a internet cuando se abre la aplicación por primera vez.", Toast.LENGTH_LONG).show();
+
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Intent salida=new Intent( Intent.ACTION_MAIN);
+            finish();
+        }
     }
 
     class ExisteArchivoVersion extends AsyncTask<Void, Integer, Boolean> {
@@ -44,18 +68,10 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
-            Txt_estado.setText("Verificando Versión.");
         }
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
             String urlLocal = LOCAL + "version.json";
             URL urlL = null;
@@ -64,9 +80,16 @@ public class SplashActivity extends AppCompatActivity {
             CAFData data = CAFData.dataWithContentsOfFile(urlLocal);
             if(data != null){
                 existe = true;
+                for(int i=1; i<=100; i++){
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    publishProgress(i);
+                }
             }
 
-            publishProgress(25);
             return existe;
         }
 
