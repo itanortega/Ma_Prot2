@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.sime.itanortegaortega.wordbook.SplashActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingBottom="80dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/splash"
+            android:layout_gravity="center_horizontal" />
+        <ProgressBar
+            android:id="@+id/Pb_Estado"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Txt_estado"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
