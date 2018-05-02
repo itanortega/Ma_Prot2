@@ -18,7 +18,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Acerca de"/>
+            android:layout_gravity="center_horizontal"
+            android:text="Existe una nueva versión."/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Actualizar"
+            android:onClick="actualizar"
+            tools:ignore="OnClick" />
     </LinearLayout>
 
 
