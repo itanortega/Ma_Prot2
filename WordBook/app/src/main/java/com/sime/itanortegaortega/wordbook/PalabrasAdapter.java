@@ -1,4 +1,4 @@
-package com.sime.itanortegaortega.app;
+package com.sime.itanortegaortega.wordbook;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.sime.itanortegaortega.wordbook.Palabra;
+import com.sime.itanortegaortega.wordbook.R;
 
 import java.util.List;
 

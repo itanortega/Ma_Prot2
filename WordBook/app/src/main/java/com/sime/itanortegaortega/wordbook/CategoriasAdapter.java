@@ -1,4 +1,4 @@
-package com.sime.itanortegaortega.app;
+package com.sime.itanortegaortega.wordbook;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.sime.itanortegaortega.wordbook.Categoria;
+import com.sime.itanortegaortega.wordbook.R;
 
 import java.util.ArrayList;
 
@@ -55,9 +56,6 @@ public class CategoriasAdapter extends BaseAdapter {
 
         final Categoria item = getItem(position);
         Cv_Categoria.setText(item.getNombre());
-        Glide.with(Cv_Imagen_categoria.getContext())
-                .load(R.drawable.img)
-                .into(Cv_Imagen_categoria);
         Cv_Categoria.setText(item.getNombre());
 
         return convertView;
