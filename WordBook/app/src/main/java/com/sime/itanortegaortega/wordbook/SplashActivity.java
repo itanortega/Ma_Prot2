@@ -14,6 +14,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -36,6 +37,8 @@ public class SplashActivity extends AppCompatActivity {
         Pb_Estado.setMax(100);
 
         LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
+
+        File file = new File(LOCAL + "version.json"); file.delete();
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
 
@@ -105,7 +108,7 @@ public class SplashActivity extends AppCompatActivity {
             super.onPostExecute(existe);
 
             if(existe){
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), CategoriesActivity.class);
                 startActivity(intent);
                 finish();
             }else{
@@ -184,7 +187,7 @@ public class SplashActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Intent intent = new Intent(getBaseContext(), MainActivity.class);
+            Intent intent = new Intent(getBaseContext(), CategoriesActivity.class);
             startActivity(intent);
             finish();
         }
