@@ -3,6 +3,7 @@ package com.sime.itanortegaortega.wordbook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,11 +23,17 @@ public class CategoriesActivity extends AppCompatActivity implements AdapterView
     private CategoriasAdapter adapter;
     private GridView Gv_Categorias;
     private ExecutorService queue = Executors.newSingleThreadExecutor();
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+
+        toolbar = (Toolbar) findViewById(R.id.id_tb_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Categories - Categorías");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         Gv_Categorias =  (GridView)findViewById(R.id.Gv_Categorias);
         Gv_Categorias.setOnItemClickListener(this);

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,11 +23,19 @@ public class WordsActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
     private PalabrasAdapter palabrasAdapter;
     private ExecutorService queue = Executors.newSingleThreadExecutor();
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_words);
+
+        toolbar = (Toolbar) findViewById(R.id.id_tb_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Words - Palabras");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         id_categoria = (int) getIntent().getIntExtra("id_categoria", 0);
 
         linearLayoutManager = new LinearLayoutManager(this);
