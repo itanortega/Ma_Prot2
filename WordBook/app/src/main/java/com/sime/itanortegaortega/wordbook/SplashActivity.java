@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,27 +42,7 @@ public class SplashActivity extends AppCompatActivity {
         // File file = new File(LOCAL + "version.json"); file.delete();
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
-
-        // Obtener el estado de la conexion a internet en el dispositivo
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
-        // Validar el estado obtenido de la conexion
-        if (networkInfo != null){
-            existeArchivoVersion.execute();
-        }else {
-            Toast.makeText(this, "Es necesario conectarse a internet cuando se abre la aplicación por primera vez.", Toast.LENGTH_LONG).show();
-
-            try {
-                Thread.sleep(2500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            Intent salida=new Intent( Intent.ACTION_MAIN);
-            finish();
-        }
+        existeArchivoVersion.execute();
     }
 
     class ExisteArchivoVersion extends AsyncTask<Void, Integer, Boolean> {
@@ -112,8 +93,24 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }else{
-                DescargarArchivos descargarArchivos = new DescargarArchivos();
-                descargarArchivos.execute();
+
+                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+                if (networkInfo != null){
+                    DescargarArchivos descargarArchivos = new DescargarArchivos();
+                    descargarArchivos.execute();
+                }else {
+                    Handler handler =  new Handler(getBaseContext().getMainLooper());
+                    handler.post( new Runnable(){
+                        public void run(){
+                            Toast.makeText(getBaseContext(), "Es necesario conectarse a internet cuando se abre la aplicación por primera vez.",Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                    Intent salida=new Intent( Intent.ACTION_MAIN);
+                    finish();
+                }
             }
         }
     }

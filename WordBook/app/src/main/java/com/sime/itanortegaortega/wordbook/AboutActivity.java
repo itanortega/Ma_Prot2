@@ -1,11 +1,16 @@
 package com.sime.itanortegaortega.wordbook;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,22 +24,38 @@ public class AboutActivity extends AppCompatActivity {
     private static String LOCAL = "";
 
     Toolbar toolbar;
+    LinearLayout Pnl_Actualizacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        if (networkInfo != null){
+            CompararVersion compararVersion = new CompararVersion();
+            compararVersion.execute();
+        }else {
+            Handler handler =  new Handler(getBaseContext().getMainLooper());
+            handler.post( new Runnable(){
+                public void run(){
+                    Toast.makeText(getBaseContext(), "No fué posible buscar actualizaciones porque no hay conexión a internet.",Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+
         toolbar = (Toolbar) findViewById(R.id.id_tb_toolbar);
+        Pnl_Actualizacion = (LinearLayout) findViewById(R.id.Pnl_Actualizacion);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("About of ... - Acerca de ...");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     public void actualizar(View view) {
-        LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
-
         File file = new File(LOCAL + "version.json");
         file.delete();
 
@@ -46,12 +67,12 @@ public class AboutActivity extends AppCompatActivity {
 
     class CompararVersion extends AsyncTask<Void, Integer, Boolean> {
 
+        final String urlWeb = DOMAIN + "version.json";
+        final String urlLocal = LOCAL + "version.json";
+        boolean iguales = false;
+
         @Override
         protected Boolean doInBackground(Void... voids) {
-
-            final String urlWeb = DOMAIN + "version.json";
-            final String urlLocal = LOCAL + "version.json";
-            boolean iguales = false;
 
             URL urlW = null;
 
@@ -93,18 +114,14 @@ public class AboutActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
 
-            if(aBoolean){
-                /*Txt_estado.setText("Proceso finalizado");
-                Pb_Estado.setProgress(100);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            if(!aBoolean){
+                runOnUiThread(new Runnable(){
 
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent);
-                finish();*/
+                    @Override
+                    public void run(){
+                        Pnl_Actualizacion.setVisibility(View.VISIBLE);
+                    }
+                });
             }
         }
     }
