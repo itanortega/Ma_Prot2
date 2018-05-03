@@ -76,7 +76,7 @@ public class WordsActivity extends AppCompatActivity {
                             for(int i=0; i<palabrasJson.length(); i++){
                                 try {
                                     palabraJson = palabrasJson.getJSONObject(i);
-                                    p = new Palabra(i, "", palabraJson.getString("inglés").toString());
+                                    p = new Palabra(i, palabraJson.getString("inglés").toString(), palabraJson.getString("español").toString());
                                     palabras.add(p);
                                 } catch (JSONException e) {
                                     e.printStackTrace();

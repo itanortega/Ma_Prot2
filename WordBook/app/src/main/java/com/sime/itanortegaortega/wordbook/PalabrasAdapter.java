@@ -35,8 +35,8 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
 
     @Override
     public void onBindViewHolder(PalabraViewHolder holder, int position) {
-        holder.Cv_Palabra_en.setText(palabras.get(position).getNombre());
-        holder.Cv_Palabra_es.setText(palabras.get(position).getNombre());
+        holder.Cv_Palabra_en.setText(palabras.get(position).getNombre_en());
+        holder.Cv_Palabra_es.setText(palabras.get(position).getNombre_es());
     }
 
     @Override

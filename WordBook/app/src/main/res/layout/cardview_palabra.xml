@@ -26,13 +26,13 @@
             android:gravity="center_vertical"
             style="@style/textcard1">
             <TextView
-                android:id="@+id/Cv_Palabra_es"
+                android:id="@+id/Cv_Palabra_en"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Inglés"
                 style="@style/es1"/>
             <TextView
-                android:id="@+id/Cv_Palabra_en"
+                android:id="@+id/Cv_Palabra_es"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Español"

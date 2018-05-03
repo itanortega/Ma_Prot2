@@ -6,17 +6,17 @@ package com.sime.itanortegaortega.wordbook;
 
 public class Palabra {
     private int i;
-    private String imagen;
-    private String nombre;
+    private String nombre_en;
+    private String nombre_es;
 
     public Palabra(){
         
     }
 
-    public Palabra(int i, String imagen, String nombre) {
+    public Palabra(int i, String nombre_en, String nombre_es) {
         this.i = i;
-        this.imagen = imagen;
-        this.nombre = nombre;
+        this.nombre_en = nombre_en;
+        this.nombre_es = nombre_es;
     }
 
     public int getI() {
@@ -27,19 +27,19 @@ public class Palabra {
         this.i = i;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getNombre_en() {
+        return nombre_en;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setNombre_en(String nombre_en) {
+        this.nombre_en = nombre_en;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_es() {
+        return nombre_es;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_es(String nombre_es) {
+        this.nombre_es = nombre_es;
     }
 }
