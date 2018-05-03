@@ -50,13 +50,14 @@ public class CategoriasAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.cardview_categoria, parent, false);
         }
 
-        TextView Cv_Categoria = (TextView) convertView.findViewById(R.id.Cv_Categoria);
+        TextView Cv_Categoria_en = (TextView) convertView.findViewById(R.id.Cv_Categoria_en);
+        TextView Cv_Categoria_es = (TextView) convertView.findViewById(R.id.Cv_Categoria_es);
         ImageView Cv_Imagen_categoria = (ImageView) convertView.findViewById(R.id.Cv_Imagen_categoria);
         TextView Txt_estado = (TextView) convertView.findViewById(R.id.Txt_estado);
 
         final Categoria item = getItem(position);
-        Cv_Categoria.setText(item.getNombre());
-        Cv_Categoria.setText(item.getNombre());
+        Cv_Categoria_en.setText(item.getNombre());
+        Cv_Categoria_es.setText(item.getNombre());
 
         return convertView;
     }

@@ -35,7 +35,8 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
 
     @Override
     public void onBindViewHolder(PalabraViewHolder holder, int position) {
-        holder.Cv_Palabra.setText(palabras.get(position).getNombre());
+        holder.Cv_Palabra_en.setText(palabras.get(position).getNombre());
+        holder.Cv_Palabra_es.setText(palabras.get(position).getNombre());
     }
 
     @Override
@@ -44,10 +45,12 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
     }
 
     public class PalabraViewHolder extends RecyclerView.ViewHolder{
-        TextView Cv_Palabra;
+        TextView Cv_Palabra_en;
+        TextView Cv_Palabra_es;
         public PalabraViewHolder(View item) {
             super(item);
-            Cv_Palabra = (TextView) item.findViewById(R.id.Cv_Palabra);
+            Cv_Palabra_en = (TextView) item.findViewById(R.id.Cv_Palabra_en);
+            Cv_Palabra_es = (TextView) item.findViewById(R.id.Cv_Palabra_es);
         }
     }
 
