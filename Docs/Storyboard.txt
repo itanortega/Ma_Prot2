@@ -1,0 +1,16 @@
+Mostrar api antes
+Desactivar internet
+1. Al instalar la aplicación descarga los archivos desde el servidor y luego trabaja con archivos locales
+1.1. En caso de no encontrar conexión a internet informará sobre ello
+Activar internet
+1.2. Descarga los archivos e imagenes
+2. Las categorias se leen desde el archivo local, por lo cual no es necesaria la conexión a internet
+3. Las palabras se leen desde el archivo local, por lo cual no es necesaria la conexión a internet
+4. Acerca de: muestra los créditos, también busca una posible actualización
+4.1 En caso de no encontrar conexión a internet informará sobre ello
+Activar internet
+4.2 Al informar sobre una actualización, el usuario final tendrá la oportunidad de elegír si desea realizar la actualización o no
+Mostrar api despúes (Actualización)
+Desactivar internet
+Mostrar paneo completo con lo nuevo
+
