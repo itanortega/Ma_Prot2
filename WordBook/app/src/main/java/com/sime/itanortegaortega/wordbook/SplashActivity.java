@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
 
         LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
 
-        // File file = new File(LOCAL + "version.json"); file.delete();
+         File file = new File(LOCAL + "version.json"); file.delete();
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
         existeArchivoVersion.execute();
@@ -156,6 +157,18 @@ public class SplashActivity extends AppCompatActivity {
 
                     versionData.writeToFile(LOCAL + "version.json", true);
                     wordsData.writeToFile(LOCAL + "words.json", true);
+
+                    /*JSONArray categoriasData = jsonWordsData.getJSONArray("categorias");
+                    for (int i = 0; i < categoriasJson.length(); i++) {
+                        try {
+                            categoriaJson = categoriasJson.getJSONObject(i);
+                            c = new Categoria(i, categoriaJson.getString("nombre").toString(), "", "");
+                            categorias.add(c);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }*/
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

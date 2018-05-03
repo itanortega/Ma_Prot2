@@ -1,0 +1,36 @@
+{
+  "categorias": [
+    {
+      "inglés": "Animals",
+      "español": "Animales",
+      "words": [
+        {
+          "inglés": "Cat",
+          "español": "Gato"
+        },
+        {
+          "inglés": "Dog",
+          "español": "Perro"
+        }
+      ]
+    },
+    {
+      "inglés": "Family",
+      "español": "Familia",
+      "words": [
+        {
+          "inglés": "Brother",
+          "español": "Hermano"
+        },
+        {
+          "inglés": "Sister",
+          "español": "Hermana"
+        },
+        {
+          "inglés": "Mother",
+          "español": "Madre"
+        }
+      ]
+    }
+  ]
+}
