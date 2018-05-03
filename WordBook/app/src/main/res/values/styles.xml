@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="en1">
+        <item name="android:textSize">26dp</item>
+    </style>
+
+    <style name="es1">
+        <item name="android:textSize">26dp</item>
+    </style>
+
+    <style name="en2">
+        <item name="android:textSize">26dp</item>
+        <item name="android:gravity">center_horizontal|bottom</item>
+    </style>
+
+    <style name="es2">
+        <item name="android:textSize">26dp</item>
+        <item name="android:gravity">center_horizontal|bottom</item>
+    </style>
+
+    <style name="textcard1">
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <style name="progreso">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
 </resources>

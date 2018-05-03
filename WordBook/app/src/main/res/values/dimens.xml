@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="img1">150dp</dimen>
+    <dimen name="padding1">20dp</dimen>
+    <dimen name="cardelevation">5dp</dimen>
+    <dimen name="cardcorner">4dp</dimen>
+    <dimen name="img2">180dp</dimen>
+</resources>
