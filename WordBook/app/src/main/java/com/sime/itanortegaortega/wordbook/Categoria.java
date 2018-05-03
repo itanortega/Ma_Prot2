@@ -11,54 +11,18 @@ import com.sime.itanortegaortega.wordbook.R;
 
 public class Categoria {
     private int id;
-    private String nombre;
-    private String imagen;
+    private String nombre_en;
+    private String nombre_es;
     private String estado;
-    private Activity act = new Activity();
 
-    public Categoria(int id, String nombre, String imagen, String estado) {
+    public Categoria() {
+
+    }
+
+    public Categoria(int id, String nombre_en, String nombre_es, String estado) {
         this.id = id;
-        this.nombre = nombre;
-        this.imagen = imagen;
-        this.estado = estado;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Drawable getImagen() {
-        /*Drawable img = null;
-        switch (nombre) {
-            case "animales": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "familia": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "ropa": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "profesiones": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "la oficina": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "cuerpo": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "ciudad": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "alimentos": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "colores": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "deportes": img = act.getResources().getDrawable(R.drawable.animales); break;
-            case "default": img = act.getResources().getDrawable(R.drawable.animales); break;
-        }
-        return img;*/
-        return act.getResources().getDrawable(R.drawable.img);
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
+        this.nombre_en = nombre_en;
+        this.nombre_es = nombre_es;
         this.estado = estado;
     }
 
@@ -68,5 +32,29 @@ public class Categoria {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNombre_en() {
+        return nombre_en;
+    }
+
+    public void setNombre_en(String nombre_en) {
+        this.nombre_en = nombre_en;
+    }
+
+    public String getNombre_es() {
+        return nombre_es;
+    }
+
+    public void setNombre_es(String nombre_es) {
+        this.nombre_es = nombre_es;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

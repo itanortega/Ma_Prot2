@@ -56,8 +56,8 @@ public class CategoriasAdapter extends BaseAdapter {
         TextView Txt_estado = (TextView) convertView.findViewById(R.id.Txt_estado);
 
         final Categoria item = getItem(position);
-        Cv_Categoria_en.setText(item.getNombre());
-        Cv_Categoria_es.setText(item.getNombre());
+        Cv_Categoria_en.setText(item.getNombre_en());
+        Cv_Categoria_es.setText(item.getNombre_es());
 
         return convertView;
     }
