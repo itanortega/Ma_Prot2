@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 import static android.telecom.DisconnectCause.LOCAL;
 
@@ -158,16 +159,23 @@ public class SplashActivity extends AppCompatActivity {
                     versionData.writeToFile(LOCAL + "version.json", true);
                     wordsData.writeToFile(LOCAL + "words.json", true);
 
-                    /*JSONArray categoriasData = jsonWordsData.getJSONArray("categorias");
-                    for (int i = 0; i < categoriasJson.length(); i++) {
+                    JSONArray categoriasData = jsonWordsData.getJSONArray("categorias");
+                    JSONObject categoriaData;
+                    JSONArray palabrasData;
+                    JSONObject palabraData;
+                    for (int i = 0; i < categoriasData.length(); i++) {
                         try {
-                            categoriaJson = categoriasJson.getJSONObject(i);
-                            c = new Categoria(i, categoriaJson.getString("nombre").toString(), "", "");
-                            categorias.add(c);
+                            categoriaData = categoriasData.getJSONObject(i);
+                            Log.d("debugapp", categoriaData.getString("español").toString());
+                            palabrasData = categoriaData.getJSONArray("words");
+                            for (int j = 0; j< palabrasData.length(); j++) {
+                                palabraData = palabrasData.getJSONObject(i);
+                                Log.d("debugapp", palabraData.getString("español").toString());
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                    }*/
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
