@@ -170,14 +170,13 @@ public class SplashActivity extends AppCompatActivity {
                             imagenes.add(categoriaData.getString("español").toString());
                             palabrasData = categoriaData.getJSONArray("words");
                             for (int j = 0; j< palabrasData.length(); j++) {
-                                palabraData = palabrasData.getJSONObject(i);
+                                palabraData = palabrasData.getJSONObject(j);
                                 imagenes.add(palabraData.getString("español").toString());
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
-                    publishProgress(1);
                     for(int k = 0; k < imagenes.size(); k++){
                         CAFData data = null;
                         try {
@@ -186,7 +185,7 @@ public class SplashActivity extends AppCompatActivity {
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
                         }
-                        publishProgress(Integer.parseInt(String.valueOf(100*k/imagenes.size())));
+                        publishProgress(Integer.parseInt(String.valueOf(99*k/imagenes.size()))+1);
 
                     }
                 } catch (JSONException e) {
@@ -201,7 +200,6 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            Txt_estado.setText(String.valueOf(values[0]));
             Pb_Estado.setProgress(values[0]);
         }
 
