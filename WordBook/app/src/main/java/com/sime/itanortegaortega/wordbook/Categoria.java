@@ -14,16 +14,18 @@ public class Categoria {
     private String nombre_en;
     private String nombre_es;
     private String estado;
+    private String url;
 
     public Categoria() {
 
     }
 
-    public Categoria(int id, String nombre_en, String nombre_es, String estado) {
+    public Categoria(int id, String nombre_en, String nombre_es, String estado, String url) {
         this.id = id;
         this.nombre_en = nombre_en;
         this.nombre_es = nombre_es;
         this.estado = estado;
+        this.url = url;
     }
 
     public int getId() {
@@ -56,5 +58,13 @@ public class Categoria {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

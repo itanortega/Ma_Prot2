@@ -20,6 +20,7 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
 
     public List<Palabra> palabras;
     public Context context;
+    private static String LOCAL = "";
 
     public PalabrasAdapter(List<Palabra> palabras, Context context) {
         this.palabras = palabras;
@@ -37,6 +38,13 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
     public void onBindViewHolder(PalabraViewHolder holder, int position) {
         holder.Cv_Palabra_en.setText(palabras.get(position).getNombre_en());
         holder.Cv_Palabra_es.setText(palabras.get(position).getNombre_es());
+        /*CAFData data = CAFData.dataWithContentsOfFile(localPath + "/LastPhoto.jpg");
+        if(data != null){
+            Bitmap bitmap = data.toImage();
+            if(bitmap != null){
+                Img_Foto.setImageBitmap(bitmap);
+            }
+        }*/
     }
 
     @Override

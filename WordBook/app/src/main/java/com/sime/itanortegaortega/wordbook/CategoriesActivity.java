@@ -88,7 +88,7 @@ public class CategoriesActivity extends AppCompatActivity implements AdapterView
                             for (int i = 0; i < categoriasJson.length(); i++) {
                                 try {
                                     categoriaJson = categoriasJson.getJSONObject(i);
-                                    c = new Categoria(i, categoriaJson.getString("inglés").toString(), categoriaJson.getString("español").toString(), "0/0");
+                                    c = new Categoria(i, categoriaJson.getString("inglés").toString(), categoriaJson.getString("español").toString(), "0/0", LOCAL + "img/" + categoriaJson.getString("español").toString() + ".png");
                                     categorias.add(c);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
