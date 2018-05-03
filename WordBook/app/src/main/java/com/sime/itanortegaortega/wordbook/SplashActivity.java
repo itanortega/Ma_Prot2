@@ -1,6 +1,7 @@
 package com.sime.itanortegaortega.wordbook;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -128,7 +129,7 @@ public class SplashActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-
+            ArrayList<String> imagenes = new ArrayList<String>();
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -166,17 +167,28 @@ public class SplashActivity extends AppCompatActivity {
                     for (int i = 0; i < categoriasData.length(); i++) {
                         try {
                             categoriaData = categoriasData.getJSONObject(i);
-                            Log.d("debugapp", categoriaData.getString("español").toString());
+                            imagenes.add(categoriaData.getString("español").toString());
                             palabrasData = categoriaData.getJSONArray("words");
                             for (int j = 0; j< palabrasData.length(); j++) {
                                 palabraData = palabrasData.getJSONObject(i);
-                                Log.d("debugapp", palabraData.getString("español").toString());
+                                imagenes.add(palabraData.getString("español").toString());
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
+                    publishProgress(1);
+                    for(int k = 0; k < imagenes.size(); k++){
+                        CAFData data = null;
+                        try {
+                            data = CAFData.dataWithContentsOfURL(new URL(DOMAIN + "img/" + imagenes.get(k).toString() + ".png"));
+                            data.writeToFile(LOCAL + "img/" + imagenes.toString() + ".png", true);
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        }
+                        publishProgress(Integer.parseInt(String.valueOf(100*k/imagenes.size())));
 
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -189,7 +201,7 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-
+            Txt_estado.setText(String.valueOf(values[0]));
             Pb_Estado.setProgress(values[0]);
         }
 
