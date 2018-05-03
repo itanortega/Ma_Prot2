@@ -42,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
 
         LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
 
-        File file = new File(LOCAL + "version.json"); file.delete();
+        //File file = new File(LOCAL + "version.json"); file.delete();
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
         existeArchivoVersion.execute();

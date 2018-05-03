@@ -1,6 +1,7 @@
 package com.sime.itanortegaortega.wordbook;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,12 +54,19 @@ public class CategoriasAdapter extends BaseAdapter {
         TextView Cv_Categoria_en = (TextView) convertView.findViewById(R.id.Cv_Categoria_en);
         TextView Cv_Categoria_es = (TextView) convertView.findViewById(R.id.Cv_Categoria_es);
         ImageView Cv_Imagen_categoria = (ImageView) convertView.findViewById(R.id.Cv_Imagen_categoria);
-        TextView Txt_estado = (TextView) convertView.findViewById(R.id.Txt_estado);
+        //TextView Txt_estado = (TextView) convertView.findViewById(R.id.Txt_estado);
 
         final Categoria item = getItem(position);
         Cv_Categoria_en.setText(item.getNombre_en());
         Cv_Categoria_es.setText(item.getNombre_es());
+        CAFData data = CAFData.dataWithContentsOfFile(item.getUrl());
 
+        if(data != null){
+            Bitmap bitmap = data.toImage();
+            if(bitmap != null){
+                Cv_Imagen_categoria.setImageBitmap(bitmap);
+            }
+        }
         return convertView;
     }
 }
