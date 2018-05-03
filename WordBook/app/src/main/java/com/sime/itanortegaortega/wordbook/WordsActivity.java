@@ -76,7 +76,7 @@ public class WordsActivity extends AppCompatActivity {
                             for(int i=0; i<palabrasJson.length(); i++){
                                 try {
                                     palabraJson = palabrasJson.getJSONObject(i);
-                                    p = new Palabra(i, palabraJson.getString("inglés").toString(), palabraJson.getString("español").toString(), LOCAL + "img/" + palabraJson.getString("español").toString() + ".png");
+                                    p = new Palabra(i, palabraJson.getString("inglés").toString(), palabraJson.getString("español").toString(), LOCAL + palabraJson.getString("español").toString() + ".png");
                                     palabras.add(p);
                                 } catch (JSONException e) {
                                     e.printStackTrace();

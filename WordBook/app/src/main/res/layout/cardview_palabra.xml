@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/Cv_Imagen_categoria"
+            android:id="@+id/Cv_Imagen_Palabra"
             android:layout_width="@dimen/img1"
             android:layout_height="@dimen/img1"
             android:src="@drawable/img"

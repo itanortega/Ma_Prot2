@@ -1,10 +1,13 @@
 package com.sime.itanortegaortega.wordbook;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sime.itanortegaortega.wordbook.Palabra;
@@ -20,7 +23,6 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
 
     public List<Palabra> palabras;
     public Context context;
-    private static String LOCAL = "";
 
     public PalabrasAdapter(List<Palabra> palabras, Context context) {
         this.palabras = palabras;
@@ -38,13 +40,14 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
     public void onBindViewHolder(PalabraViewHolder holder, int position) {
         holder.Cv_Palabra_en.setText(palabras.get(position).getNombre_en());
         holder.Cv_Palabra_es.setText(palabras.get(position).getNombre_es());
-        /*CAFData data = CAFData.dataWithContentsOfFile(localPath + "/LastPhoto.jpg");
+        CAFData data = CAFData.dataWithContentsOfFile(palabras.get(position).getUrl());
+
         if(data != null){
             Bitmap bitmap = data.toImage();
             if(bitmap != null){
-                Img_Foto.setImageBitmap(bitmap);
+                holder.Cv_Imagen_Palabra.setImageBitmap(bitmap);
             }
-        }*/
+        }
     }
 
     @Override
@@ -55,10 +58,12 @@ public class PalabrasAdapter  extends RecyclerView.Adapter <PalabrasAdapter.Pala
     public class PalabraViewHolder extends RecyclerView.ViewHolder{
         TextView Cv_Palabra_en;
         TextView Cv_Palabra_es;
+        ImageView Cv_Imagen_Palabra;
         public PalabraViewHolder(View item) {
             super(item);
             Cv_Palabra_en = (TextView) item.findViewById(R.id.Cv_Palabra_en);
             Cv_Palabra_es = (TextView) item.findViewById(R.id.Cv_Palabra_es);
+            Cv_Imagen_Palabra = (ImageView) item.findViewById(R.id.Cv_Imagen_Palabra);
         }
     }
 

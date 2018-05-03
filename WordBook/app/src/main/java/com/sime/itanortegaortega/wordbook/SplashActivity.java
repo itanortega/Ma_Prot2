@@ -42,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
 
         LOCAL = getApplicationContext().getFilesDir().getAbsolutePath() + "/";
 
-        //File file = new File(LOCAL + "version.json"); file.delete();
+        File file = new File(LOCAL + "version.json"); file.delete();
 
         ExisteArchivoVersion existeArchivoVersion = new ExisteArchivoVersion();
         existeArchivoVersion.execute();
@@ -177,11 +177,13 @@ public class SplashActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
+
+                    CAFData data = null;
+
                     for(int k = 0; k < imagenes.size(); k++){
-                        CAFData data = null;
                         try {
-                            data = CAFData.dataWithContentsOfURL(new URL(DOMAIN + "img/" + imagenes.get(k).toString() + ".png"));
-                            data.writeToFile(LOCAL + "img/" + imagenes.toString() + ".png", true);
+                            data = CAFData.dataWithContentsOfURL(new URL(DOMAIN + imagenes.get(k).toString() + ".png"));
+                            data.writeToFile(LOCAL + imagenes.get(k).toString() + ".png", true);
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
                         }
