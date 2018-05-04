@@ -2,8 +2,7 @@
 <resources>
     <dimen name="img1">150dp</dimen>
     <dimen name="padding1">20dp</dimen>
-    <dimen name="cardelevation">5dp</dimen>
-    <dimen name="cardcorner">4dp</dimen>
     <dimen name="img2">180dp</dimen>
     <dimen name="t_size">18dp</dimen>
+    <dimen name="escudo">120dp</dimen>
 </resources>

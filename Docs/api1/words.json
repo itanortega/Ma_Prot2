@@ -27,22 +27,6 @@
         {
           "inglés": "Elephant",
           "español": "Elefante"
-        },
-        {
-          "inglés": "Camel",
-          "español": "Camello"
-        },
-        {
-          "inglés": "Horse",
-          "español": "Caballo"
-        },
-        {
-          "inglés": "Cow",
-          "español": "Vaca"
-        },
-        {
-          "inglés": "Bull",
-          "español": "Toro"
         }
       ]
     },
@@ -73,22 +57,6 @@
         {
           "inglés": "Aunt",
           "español": "Tía"
-        },
-        {
-          "inglés": "Grandfather",
-          "español": "Abuelo"
-        },
-        {
-          "inglés": "Grandmother",
-          "español": "Abuela"
-        },
-        {
-          "inglés": "Wife",
-          "español": "Esposa"
-        },
-        {
-          "inglés": "Husband",
-          "español": "Marido"
         }
       ]
     },
@@ -119,22 +87,6 @@
         {
           "inglés": "Hat",
           "español": "Sombrero"
-        },
-        {
-          "inglés": "Pants",
-          "español": "Pantalón"
-        },
-        {
-          "inglés": "Socks",
-          "español": "Medias"
-        },
-        {
-          "inglés": "T-shirt",
-          "español": "Camiseta"
-        },
-        {
-          "inglés": "Skirt",
-          "español": "Falda"
         }
       ]
     },
@@ -165,114 +117,6 @@
         {
           "inglés": "Heart",
           "español": "Corazón"
-        },
-        {
-          "inglés": "Ear",
-          "español": "Oreja"
-        },
-        {
-          "inglés": "Foot",
-          "español": "Pie"
-        },
-        {
-          "inglés": "Blood",
-          "español": "Sangre"
-        },
-        {
-          "inglés": "Lip",
-          "español": "Labio"
-        }
-      ]
-    },
-    {
-      "inglés": "The City",
-      "español": "La Ciudad",
-      "words": [
-        {
-          "inglés": "Bank",
-          "español": "Banco"
-        },
-        {
-          "inglés": "Church",
-          "español": "Iglesia"
-        },
-        {
-          "inglés": "Hotel",
-          "español": "Hotel"
-        },
-        {
-          "inglés": "House",
-          "español": "Casa"
-        },
-        {
-          "inglés": "School",
-          "español": "Colegio"
-        },
-        {
-          "inglés": "Stadium",
-          "español": "Estadio"
-        },
-        {
-          "inglés": "Park",
-          "español": "Parque"
-        },
-        {
-          "inglés": "Bridge",
-          "español": "Puente"
-        },
-        {
-          "inglés": "University",
-          "español": "Universidad"
-        },
-        {
-          "inglés": "Museum",
-          "español": "Museo"
-        }
-      ]
-    },
-    {
-      "inglés": "The Restaurant",
-      "español": "El Restaurante",
-      "words": [
-        {
-          "inglés": "Champagne",
-          "español": "Champán"
-        },
-        {
-          "inglés": "Table",
-          "español": "Mesa"
-        },
-        {
-          "inglés": "Chef",
-          "español": "Chef"
-        },
-        {
-          "inglés": "Meat",
-          "español": "Carne"
-        },
-        {
-          "inglés": "Customer",
-          "español": "Cliente"
-        },
-        {
-          "inglés": "Course",
-          "español": "Plato"
-        },
-        {
-          "inglés": "The bill",
-          "español": "La cuenta"
-        },
-        {
-          "inglés": "Knife",
-          "español": "Cuchillo"
-        },
-        {
-          "inglés": "Dessert",
-          "español": "Postre"
-        },
-        {
-          "inglés": "Glass",
-          "español": "Vaso"
         }
       ]
     }

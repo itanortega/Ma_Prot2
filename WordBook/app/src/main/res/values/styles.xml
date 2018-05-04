@@ -10,24 +10,24 @@
 
     <style name="en1">
         <item name="android:textSize">@dimen/t_size</item>
-        <item name="android:color">@color/colorVerde</item>
+        <item name="android:textColor">@color/colorVerde</item>
     </style>
 
     <style name="es1">
         <item name="android:textSize">@dimen/t_size</item>
-        <item name="android:color">@color/colorAzul</item>
+        <item name="android:textColor">@color/colorAzul</item>
     </style>
 
     <style name="en2">
         <item name="android:textSize">@dimen/t_size</item>
         <item name="android:gravity">center_horizontal|bottom</item>
-        <item name="android:color">@color/colorVerde</item>
+        <item name="android:textColor">@color/colorVerde</item>
     </style>
 
     <style name="es2">
         <item name="android:textSize">@dimen/t_size</item>
         <item name="android:gravity">center_horizontal|bottom</item>
-        <item name="android:color">@color/colorAzul</item>
+        <item name="android:textColor">@color/colorAzul</item>
     </style>
 
     <style name="textcard1">
