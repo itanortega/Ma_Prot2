@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="bottom"
-        android:paddingBottom="80dp">
+        android:paddingBottom="80dp"
+        android:background="@color/colorBlanco">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +23,8 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:progressBackgroundTint="@color/colorVerde"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

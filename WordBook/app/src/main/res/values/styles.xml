@@ -9,21 +9,25 @@
     </style>
 
     <style name="en1">
-        <item name="android:textSize">26dp</item>
+        <item name="android:textSize">@dimen/t_size</item>
+        <item name="android:color">@color/colorVerde</item>
     </style>
 
     <style name="es1">
-        <item name="android:textSize">26dp</item>
+        <item name="android:textSize">@dimen/t_size</item>
+        <item name="android:color">@color/colorAzul</item>
     </style>
 
     <style name="en2">
-        <item name="android:textSize">26dp</item>
+        <item name="android:textSize">@dimen/t_size</item>
         <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:color">@color/colorVerde</item>
     </style>
 
     <style name="es2">
-        <item name="android:textSize">26dp</item>
+        <item name="android:textSize">@dimen/t_size</item>
         <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:color">@color/colorAzul</item>
     </style>
 
     <style name="textcard1">
@@ -34,4 +38,5 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <dimen name="tsize">18dp</dimen>
 </resources>

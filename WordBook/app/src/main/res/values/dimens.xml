@@ -5,4 +5,5 @@
     <dimen name="cardelevation">5dp</dimen>
     <dimen name="cardcorner">4dp</dimen>
     <dimen name="img2">180dp</dimen>
+    <dimen name="t_size">18dp</dimen>
 </resources>
